@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Danbost Construction Ltd</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background: #f5f7fa;
+      color: #1b1b1b;
+      line-height: 1.6;
+    }
+
+    header {
+      background: #0d2b45;
+      color: white;
+      padding: 18px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 15px;
+    }
+
+    .logo-box {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
+
+    .logo-box img {
+      width: 70px;
+      height: 70px;
+      object-fit: contain;
+      background: white;
+      border-radius: 10px;
+      padding: 6px;
+    }
+
+    .logo-text h1 {
+      font-size: 28px;
+      margin-bottom: 4px;
+    }
+
+    .logo-text p {
+      font-size: 14px;
+      color: #d8e3ea;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin-left: 20px;
+      font-weight: bold;
+    }
+
+    nav a:hover {
+      color: #f4a261;
+    }
+
+    .hero {
+      min-height: 85vh;
+      display: grid;
+      grid-template-columns: 1.1fr 1fr;
+      align-items: center;
+      gap: 30px;
+      padding: 50px 40px;
+      background: linear-gradient(to right, #0d2b45, #163d5c);
+      color: white;
+    }
+
+    .hero-text h2 {
+      font-size: 52px;
+      line-height: 1.1;
+      margin-bottom: 20px;
+    }
+
+    .hero-text h2 span {
+      color: #f4a261;
+    }
+
+    .hero-text p {
+      font-size: 18px;
+      max-width: 550px;
+      margin-bottom: 25px;
+      color: #e3edf3;
+    }
+
+    .btn-group {
+      display: flex;
+      gap: 15px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 14px 24px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: 0.3s ease;
+    }
+
+    .btn-primary {
+      background: #f4a261;
+      color: #111;
+    }
+
+    .btn-primary:hover {
+      background: #e58e3d;
+    }
+
+    .btn-secondary {
+      border: 2px solid white;
+      color: white;
+    }
+
+    .btn-secondary:hover {
+      background: white;
+      color: #0d2b45;
+    }
+
+    .hero-image img {
+      width: 100%;
+      border-radius: 18px;
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25);
+    }
+
+    section {
+      padding: 70px 40px;
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    .section-title h3 {
+      font-size: 34px;
+      color: #0d2b45;
+      margin-bottom: 10px;
+    }
+
+    .section-title p {
+      color: #555;
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+    .about {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 35px;
+      align-items: center;
+    }
+
+    .about img {
+      width: 100%;
+      border-radius: 16px;
+    }
+
+    .about-text {
+      background: white;
+      padding: 30px;
+      border-radius: 16px;
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+    }
+
+    .about-text h4 {
+      font-size: 28px;
+      color: #0d2b45;
+      margin-bottom: 15px;
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+    }
+
+    .service-card {
+      background: white;
+      padding: 28px;
+      border-radius: 14px;
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+      border-top: 5px solid #f4a261;
+    }
+
+    .service-card h4 {
+      color: #0d2b45;
+      margin-bottom: 12px;
+      font-size: 20px;
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+    }
+
+    .gallery img {
+      width: 100%;
+      border-radius: 14px;
+      box-shadow: 0 5px 14px rgba(0, 0, 0, 0.08);
+    }
+
+    .contact {
+      background: #0d2b45;
+      color: white;
+      border-radius: 18px;
+      padding: 40px;
+      text-align: center;
+    }
+
+    .contact h3 {
+      font-size: 34px;
+      margin-bottom: 15px;
+    }
+
+    .contact p {
+      margin-bottom: 10px;
+      font-size: 18px;
+    }
+
+    .contact a {
+      color: #f4a261;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    footer {
+      text-align: center;
+      padding: 25px;
+      background: #091c2c;
+      color: #cfd8df;
+      font-size: 14px;
+    }
+
+    @media (max-width: 900px) {
+      .hero,
+      .about,
+      .services-grid,
+      .gallery {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-text h2 {
+        font-size: 38px;
+      }
+
+      header {
+        padding: 18px 20px;
+      }
+
+      nav a {
+        margin-left: 12px;
+      }
+
+      section {
+        padding: 55px 20px;
+      }
+
+      .hero {
+        padding: 40px 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="logo-box">
+      <img src="danbost-logo.jpg" alt="Danbost logo">
+      <div class="logo-text">
+        <h1>Danbost Construction Ltd</h1>
+        <p>Concrete Results</p>
+      </div>
+    </div>
+
+    <nav>
+      <a href="#about">About</a>
+      <a href="#services">Services</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <div class="hero-text">
+      <h2>Building Your <span>Dream Home</span> and Stronger Roads</h2>
+      <p>
+        Danbost Construction Ltd delivers quality construction, renovation,
+        road works, consultancy, estate development, and project management
+        services with professionalism and excellence.
+      </p>
+
+      <div class="btn-group">
+        <a href="#contact" class="btn btn-primary">Call for Appointment</a>
+        <a href="#services" class="btn btn-secondary">View Services</a>
+      </div>
+    </div>
+
+    <div class="hero-image">
+      <img src="danbost-flyer.jpg" alt="Danbost construction flyer">
+    </div>
+  </section>
+
+  <section id="about">
+    <div class="section-title">
+      <h3>About Danbost</h3>
+      <p>
+        We provide dependable construction solutions tailored to homes, roads,
+        and property development needs. Our goal is to bring your vision to life
+        one brick at a time.
+      </p>
+    </div>
+
+    <div class="about">
+      <img src="danbost-flyer.jpg" alt="Danbost construction showcase">
+      <div class="about-text">
+        <h4>Why Choose Us?</h4>
+        <p>
+          At Danbost, we combine practical construction expertise with a strong
+          commitment to quality, safety, and client satisfaction.
+        </p>
+        <br>
+        <p>
+          From modern home development to road construction and consultancy,
+          we focus on delivering durable results that match client expectations.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section id="services">
+    <div class="section-title">
+      <h3>Our Services</h3>
+      <p>Professional services tailored for residential, commercial, and infrastructure projects.</p>
+    </div>
+
+    <div class="services-grid">
+      <div class="service-card">
+        <h4>Building & General Construction</h4>
+        <p>End-to-end building solutions for homes and commercial properties.</p>
+      </div>
+
+      <div class="service-card">
+        <h4>Remodeling & Renovation</h4>
+        <p>Upgrade and transform existing spaces with modern finishing and functional improvements.</p>
+      </div>
+
+      <div class="service-card">
+        <h4>Building Consultancy</h4>
+        <p>Professional guidance for planning, design, budgeting, and construction decisions.</p>
+      </div>
+
+      <div class="service-card">
+        <h4>Estate Development & Management</h4>
+        <p>Structured property development and management services for lasting value.</p>
+      </div>
+
+      <div class="service-card">
+        <h4>Architecture & Structural Design</h4>
+        <p>Smart, modern, and practical design solutions for strong and beautiful structures.</p>
+      </div>
+
+      <div class="service-card">
+        <h4>Project Management</h4>
+        <p>Coordinated execution to keep projects on time, within budget, and to specification.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="projects">
+    <div class="section-title">
+      <h3>Featured Work</h3>
+      <p>A visual impression of our construction, modern homes, and road development capability.</p>
+    </div>
+
+    <div class="gallery">
+      <img src="danbost-flyer.jpg" alt="Danbost featured project">
+      <img src="danbost-flyer.jpg" alt="Danbost modern homes">
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="contact">
+      <h3>Contact Danbost</h3>
+      <p>Phone: <a href="tel:0248224024">0248 224 024</a></p>
+      <p>Phone: <a href="tel:0500481330">0500 481 330</a></p>
+      <p>WhatsApp: <a href="https://wa.me/233597791022">0597791022</a></p>
+      <p>Email: <a href="mailto:danbostltd@gmail.com">danbostltd@gmail.com</a></p>
+      <p>Concrete results...</p>
+    </div>
+  </section>
+
+  <footer>
+    &copy; 2026 Danbost Construction Ltd. All rights reserved.
+  </footer>
+
+</body>
+</html>
